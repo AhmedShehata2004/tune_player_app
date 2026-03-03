@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tunes_player_app/tune_screen.dart';
-
+import 'package:tunes_player_app/views/tune_viewdart';
 void main() {
-  runApp(const TunePlayerApp());
+  runApp( TunePlayerApp());
 }
 
 class TunePlayerApp extends StatelessWidget {
@@ -12,7 +11,7 @@ class TunePlayerApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-     home: const TuneScreen(),
+     home: TuneScreen(),  
     );
   }
 }

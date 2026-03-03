@@ -1,0 +1,47 @@
+import 'package:flutter/material.dart';
+import 'package:tunes_player_app/widgets/tune_item.dart';
+import 'package:tunes_player_app/models/tune_model.dart';
+
+class TuneScreen extends StatelessWidget {
+   TuneScreen({super.key});
+ final List<TuneModel> tunes = [
+    TuneModel(soundPath: 'note1.wav', color: Colors.red),
+    TuneModel(soundPath: 'note2.wav', color: Colors.orange),
+    TuneModel(soundPath: 'note3.wav', color: Colors.yellow),
+    TuneModel(soundPath: 'note4.wav', color: Colors.green),
+    TuneModel(soundPath: 'note5.wav', color: Colors.blue),
+    TuneModel(soundPath: 'note6.wav', color: Colors.indigo),
+    TuneModel(soundPath: 'note7.wav', color: Colors.purple)
+    ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Colors.brown,
+        title: const Text(
+          'Tune Player',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+      body: Column(
+         children:tunes.map((tune) => TuneItem(
+          tuneModel: tune,
+         )).toList(),
+
+      ),
+    );
+  }
+  // List<TuneItem> buildTuneItems() {
+  //   List<TuneItem> tuneItems = [];
+  //  for(var element in tuneColors){
+  //    tuneItems.add(TuneItem(itemColor: element));
+  //  }
+  //   return tuneItems;
+  // }
+}
